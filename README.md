@@ -29,4 +29,6 @@ python3 linuxcnc-robot-logger.py /tmp/test.ngc
 # Denavit-Hartenberg (DH) parameters for genserkins
 I have also added a small experimental tool to visualize the Denavit-Hartenberg parameter so that you can more easily adapt it to your own robots
 
+https://linuxcnc.org/docs/devel/html/tr/motion/dh-parameters.html
+
 ![dh-parameter](./dh-parameter.png)
