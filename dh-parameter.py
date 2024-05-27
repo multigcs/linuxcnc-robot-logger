@@ -455,7 +455,7 @@ class WinForm(QWidget):
         layoutright.addWidget(self.output)
 
         if args.halfile:
-            print("loading params from halfile: {args.halfile}")
+            print(f"loading params from halfile: {args.halfile}")
             hal = open(args.halfile, "r").read()
 
         for line in hal.split("\n"):
