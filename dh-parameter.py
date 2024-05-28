@@ -442,17 +442,17 @@ class WinForm(QWidget):
         # self.resize(1900, 1200)
         signal.signal(signal.SIGINT, signal.SIG_DFL)
         layoutleft = QVBoxLayout()
-        layoutMain.addLayout(layoutleft)
+        layoutMain.addLayout(layoutleft, stretch=0)
 
         self.view3d = GLWidget(self)
-        self.view3d.setFixedWidth(800)
-        self.view3d.setFixedHeight(600)
-        layoutMain.addWidget(self.view3d)
+        self.view3d.setMinimumSize(640, 480)
+        layoutMain.addWidget(self.view3d, stretch=1)
 
         layoutright = QVBoxLayout()
-        layoutMain.addLayout(layoutright)
+        layoutMain.addLayout(layoutright, stretch=0)
 
         self.output = QPlainTextEdit()
+        self.output.setFixedWidth(250)
         layoutright.addWidget(self.output)
 
         if args.halfile:
@@ -467,7 +467,9 @@ class WinForm(QWidget):
 
             vbox = QHBoxLayout()
             layoutleft.addLayout(vbox)
-            vbox.addWidget(QLabel(f"{key}:"))
+            plabel = QLabel(f"{key}:")
+            plabel.setFixedWidth(70)
+            vbox.addWidget(plabel)
             dspinbox = QDoubleSpinBox()
             dspinbox.setMinimum(-9999999999.0)
             dspinbox.setMaximum(9999999999.0)
@@ -477,6 +479,7 @@ class WinForm(QWidget):
             else:
                 dspinbox.setSingleStep(1.0)
             dspinbox.setValue(value)
+            dspinbox.setFixedWidth(250)
             parameter[key] = dspinbox
             vbox.addWidget(dspinbox)
 
