@@ -434,6 +434,7 @@ def draw_text(
 
 class WinForm(QWidget):
     def __init__(self, args, parent=None):
+        global hal
         super(WinForm, self).__init__(parent)
         self.setWindowTitle("Denavit-Hartenberg - Viewer")
         layoutMain = QHBoxLayout()
