@@ -564,6 +564,7 @@ class WinForm(QWidget):
     def reset_callback(self):
         self.pulse = " "
         self.mode = None
+        self.spindle = {"enabled": 0}
         self.last_mode = None
         self.pos_w = [None] * 9
         self.pos_ws = [False] * 9
